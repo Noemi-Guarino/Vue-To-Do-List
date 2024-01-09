@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue To Do List</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <div id="app">
+            <h1>{{ titlelist }}</h1>
+
+                <div>
+                    <input type="text" v-model="newlist">
+                    <button @click="add()">
+                        aggiungi
+                    </button>
+                </div>
+            <div class="innercontainer">
+            
+                <div>
+                    <ul>
+                        <li v-for="(singletext,index) in todolist" 
+                        :class="{
+                            'line': singletext.done == true,
+                        }">
+                            {{singletext.text}}
+
+                            <button @click="remove(index)" >
+                                &#10005;
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- js -->
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="js/scripts.js"></script>
+
+    <!-- vue js -->
+</body>
+</html>
