@@ -21,22 +21,22 @@
                     </button>
                 </div>
             <div class="innercontainer">
-            
-                <div>
-                    <ul>
-                        <li v-for="(singletext,index) in todolist" 
-                        :class="{
-                            'line': singletext.done == true,
-                        }">
-                            {{singletext.text}}
 
-                            <button @click="remove(index)" >
-                                &#10005;
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                
+                <ul v-if = "todolist.length > 0">
+                    <li v-for="(singletext,index) in todolist" 
+                    :class="{
+                        'line': singletext.done == true,
+                    }">
+                        {{singletext.text}}
+
+                        <button @click="remove(index)" >
+                            &#10005;
+                        </button>
+                    </li>
+                </ul>
+                <p v-else>
+                    Aggiungi nuove note
+                </p>
             </div>
         </div>
     </div>

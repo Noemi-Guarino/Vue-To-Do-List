@@ -43,9 +43,19 @@ const { createApp } = Vue
         this.todolist.splice(index,1);
     },
     add(){
-        this.todolist.push(this.newlist);
-        console.log(this.newlist,"questo")
+        let newObject = {
+            text:this.newlist,
+            done:false,
+        }
+        this.todolist.push(newObject);
+        console.log(newObject,"questa è al nuova nota")
         this.newlist = '';
     }
     }
   }).mount('#app')
+
+
+document.addEventListener('keydown', (event) => {
+  const keyname = event.key;
+  console.log(keyname);
+});
