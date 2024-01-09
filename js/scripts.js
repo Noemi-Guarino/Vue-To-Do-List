@@ -55,7 +55,3 @@ const { createApp } = Vue
   }).mount('#app')
 
 
-document.addEventListener('keydown', (event) => {
-  const keyname = event.key;
-  console.log(keyname);
-});
